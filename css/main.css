@@ -1,26 +1,105 @@
-body{
-font-family: 'Poppins', sans-serif;
-}
 *{
-            box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-h1,h2,h3,h4,h5,h6,p{
-    margin: 0;
-}
-ul,ol{
-    list-style: none;
-    display: inline-block;
-}
-a{
-    text-decoration: none;
-}
-.container{
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-p{
-  color: red;
-}
+    box-sizing: border-box;
+  }
+  p{
+    background-color: red;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 400px;
+  
+  }
+  h1{
+    background-color: yellow;
+  }
+  .el{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 700px;
+  }
+  .box{
+    width: 400px;
+    height: 2px;
+    background-color: #55550c;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;
+    animation-name: box;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .el:hover .box{
+    animation-play-state: paused;
+  }
+  @keyframes box {
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  .item{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  .item1{
+    position: absolute;
+    left: 0;
+    animation-name: item1;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .item3{
+    position: absolute;
+    right: 0;
+    animation-name: item3;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes item1 {
+    0%{
+      left: 0;
+    }
+    50%{
+      left: 95%;
+      background-color: red;
+      transform: rotateX(180deg);
+    }
+    100%{
+      left: 0;
+    }
+  }
+  @keyframes item3 {
+    0%{
+      right: 0;
+    }
+    50%{
+      right: 95%;
+      background-color: red;
+      transform: rotateX(180deg);
+    }
+    100%{
+      right: 0;
+    }
+  }
+  
+  .item2{
+    animation-name: item2;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes item2 {
+    100%{
+      transform: rotateY(360deg);
+    }
+  }
